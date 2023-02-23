@@ -12,8 +12,8 @@ using UpmeetEventSystem.DAL;
 namespace UpmeetEventSystem.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20230223025751_initial")]
-    partial class initial
+    [Migration("20230223235259_addstuff")]
+    partial class addstuff
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,60 +26,70 @@ namespace UpmeetEventSystem.Migrations
 
             modelBuilder.Entity("UpmeetEventSystem.Models.Event", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("EventId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EventId"), 1L, 1);
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("FavoriteId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
 
-                    b.HasIndex("FavoriteId");
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Venue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EventId");
 
                     b.ToTable("Events");
                 });
 
             modelBuilder.Entity("UpmeetEventSystem.Models.Favorite", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
 
-                    b.HasKey("Id");
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId");
+
+                    b.HasIndex("EventId");
 
                     b.ToTable("Favorites");
                 });
 
-            modelBuilder.Entity("UpmeetEventSystem.Models.Event", b =>
-                {
-                    b.HasOne("UpmeetEventSystem.Models.Favorite", null)
-                        .WithMany("FavoriteEvents")
-                        .HasForeignKey("FavoriteId");
-                });
-
             modelBuilder.Entity("UpmeetEventSystem.Models.Favorite", b =>
                 {
-                    b.Navigation("FavoriteEvents");
+                    b.HasOne("UpmeetEventSystem.Models.Event", "Events")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Events");
                 });
 #pragma warning restore 612, 618
         }
