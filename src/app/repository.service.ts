@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class RepositoryService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  apiUri: string = 'https://localhost:7011/api/Event'
+
+  getEvents(){
+    return this.http.get(`${this.apiUri}/ViewEvents`)
+  }
 }
