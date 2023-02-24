@@ -13,5 +13,4 @@ export class RepositoryService {
   getEvents(){
     return this.http.get(`${this.apiUri}/ViewEvents`)
   }
-
 }
