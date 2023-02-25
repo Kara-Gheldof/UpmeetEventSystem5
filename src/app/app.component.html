@@ -36,82 +36,65 @@
     </header>
 
     <!-- Page content -->
-    <div class="w3-content w3-padding" style="max-width:1564px">
-        <!-- Event Section -->
-        <div class="w3-container w3-padding-32">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Upcoming Events</h3>
-        </div>
+    <app-upcoming-events-list></app-upcoming-events-list>
 
+    <!-- Favorite Section -->
+    <div class="w3-container w3-padding-32" id="favorites">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Events</h3>
         <div class="w3-row-padding">
-            <div *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
+            <div *ngFor="let favorite of favorites" class="w3-col l3 m6 w3-margin-bottom">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">{{event.name}}</div>
-                    <img src="{{event.image}}" style="width: 300px;" height="200px;">
+                    <div class="w3-display-topleft w3-black w3-padding">{{favorite.Event.name}}</div>
+                    <img src="/w3images/house5.jpg" alt="{{favorite.Event.name}}" style="width:100%">
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- About Section -->
-        <div class="w3-container w3-padding-32" id="about">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Events</h3>
-            <div class="w3-row-padding">
-                <div *ngFor="let favorite of favorites" class="w3-col l3 m6 w3-margin-bottom">
-                    <div class="w3-display-container">
-                        <div class="w3-display-topleft w3-black w3-padding">{{favorite.Event.name}}</div>
-                        <img src="/w3images/house5.jpg" alt="{{favorite.Event.name}}" style="width:100%">
-                    </div>
-                </div>
-            </div>
+    <!-- Meet The Team -->
+    <div class="w3-row-padding w3-grayscale" id="meet">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Meet the Upmeet Team!</h3>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/104472387_3098917313495951_2647682678090903817_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=CfWikUkyGRMAX-Eepdm&tn=SHYc6XcDAXOptSNT&_nc_ht=scontent-ord5-1.xx&oh=00_AfAtBHyNq-KGxP0B6xReTaGyKF92wQ9hf_ahgRu89DE1-g&oe=6420FAC7"
+                alt="Brittany" style="width:100%">
+            <h3>Brittany Blackmon</h3>
+            <p class="w3-opacity">Software Engineer</p>
         </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="https://ca.slack-edge.com/T04UPFZ31-U03MW2HETK8-d6a8b5180668-512" alt="June" style="width:100%">
+            <h3>June Dougherty </h3>
+            <p class="w3-opacity">Software Engineer</p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="https://ca.slack-edge.com/T04UPFZ31-U03U1NQCWQ6-gb4cc6784086-512" alt="Colin" style="width:100%">
+            <h3>Colin Steward</h3>
+            <p class="w3-opacity">Software Engineer</p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="https://ca.slack-edge.com/T04UPFZ31-U043ZKX0DK5-480a074628cb-512" alt="Kara" style="width:100%">
+            <h3>Kara Gheldof</h3>
+            <p class="w3-opacity">Software Engineer</p>
+        </div>
+    </div>
 
-        <!-- Meet The Team -->
-        <div class="w3-row-padding w3-grayscale">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Meet the Upmeet Team!</h3>
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <img src="https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/104472387_3098917313495951_2647682678090903817_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=CfWikUkyGRMAX-Eepdm&tn=SHYc6XcDAXOptSNT&_nc_ht=scontent-ord5-1.xx&oh=00_AfAtBHyNq-KGxP0B6xReTaGyKF92wQ9hf_ahgRu89DE1-g&oe=6420FAC7"
-                    alt="Brittany" style="width:100%">
-                <h3>Brittany Blackmon</h3>
-                <p class="w3-opacity">Software Engineer</p>
-            </div>
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <img src="https://ca.slack-edge.com/T04UPFZ31-U03MW2HETK8-d6a8b5180668-512" alt="June"
-                    style="width:100%">
-                <h3>June Dougherty </h3>
-                <p class="w3-opacity">Software Engineer</p>
-            </div>
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <img src="https://ca.slack-edge.com/T04UPFZ31-U03U1NQCWQ6-gb4cc6784086-512" alt="Colin"
-                    style="width:100%">
-                <h3>Colin Steward</h3>
-                <p class="w3-opacity">Software Engineer</p>
-            </div>
-            <div class="w3-col l3 m6 w3-margin-bottom">
-                <img src="https://ca.slack-edge.com/T04UPFZ31-U043ZKX0DK5-480a074628cb-512" alt="Kara"
-                    style="width:100%">
-                <h3>Kara Gheldof</h3>
-                <p class="w3-opacity">Software Engineer</p>
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="w3-container w3-padding-32" id="contact">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-            <p>Lets get in touch and talk about your next event.</p>
-            <form action="/action_page.php" target="_blank">
-                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-                <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-                <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
-                <button class="w3-button w3-black w3-section" type="submit">
-                    <i class="fa fa-paper-plane"></i> SEND MESSAGE
-                </button>
-            </form>
-        </div>
+    <!-- Contact Section -->
+    <div class="w3-container w3-padding-32" id="contact">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+        <p>Lets get in touch and talk about your next event.</p>
+        <form action="/action_page.php" target="_blank">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+            <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+            <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+            <button class="w3-button w3-black w3-section" type="submit">
+                <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+        </form>
     </div>
 
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-16">
-        <p>Powered by UpMeet Event System!</p>
+        <p>Powered by Upmeet Event System!</p>
     </footer>
 
 </body>

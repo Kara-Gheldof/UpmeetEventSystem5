@@ -12,20 +12,14 @@ export class AppComponent {
 
   constructor(private repositoryService: RepositoryService) { }
 
-  events: any;
   favorites: any;
 
   ngOnInit(): void{
-    this.getEvents();
-  }
-
-  getEvents(){
-    this.repositoryService.getEvents().subscribe(
-      (response) => { this.events = response; });
+    this.getFavorites();
   }
 
   getFavorites(){
     this.repositoryService.getFavoriteEvents().subscribe(
-      (response) => { this.events = response; });
+      (response) => { this.favorites = response; });
   }
 }

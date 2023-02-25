@@ -10,7 +10,7 @@ export class RepositoryService {
 
   apiUri: string = 'https://localhost:7011/api/Event'
 
-  getFavoriteEvents(){
-    return this.http.get(`${this.apiUri}/ViewFavorites`)
+  getEvents() {
+    return this.http.get(`${this.apiUri}/ViewEvents`)
   }
 }
