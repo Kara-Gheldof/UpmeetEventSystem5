@@ -13,13 +13,19 @@ export class AppComponent {
   constructor(private repositoryService: RepositoryService) { }
 
   events: any;
+  favorites: any;
 
-  ngOnInit(): void {
+  ngOnInit(): void{
     this.getEvents();
   }
 
-  getEvents() {
+  getEvents(){
     this.repositoryService.getEvents().subscribe(
+      (response) => { this.events = response; });
+  }
+
+  getFavorites(){
+    this.repositoryService.getFavoriteEvents().subscribe(
       (response) => { this.events = response; });
   }
 }
