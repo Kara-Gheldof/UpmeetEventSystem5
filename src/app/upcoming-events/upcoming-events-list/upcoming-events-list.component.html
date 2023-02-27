@@ -10,7 +10,8 @@
             <img src="{{event.image}}" style="width: 300px;" height="200px;">
             <br>
             <button color="black">Get Details</button>
-            <button color="black">Favorite</button>
+            <button (click)="addFavorite(event.eventId)">Favorite</button>
+
         </div>
     </div>
 </div>

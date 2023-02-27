@@ -50,18 +50,44 @@ namespace UpmeetEventSystem.Controllers
       return repo.AddFavoriteEvent(addFavorite);
     }
 
-    [HttpGet("GetFavorite/{id}")]
-    public Favorite GetFavoriteById(int id)
+    //[HttpGet("GetFavoriteId/{id}")]
+    //public Favorite GetFavoriteById(int id)
+    //{
+    //  return repo.GetFavoriteById(id);
+    //}
+
+    //[HttpPost("RemoveFavoriteId/{id}")]
+    //public HttpResponseMessage RemoveFavoriteById(int id)
+    //{
+    //  try
+    //  {
+    //    if (repo.RemoveFavoriteById(id) == true)
+    //    {
+    //      return new HttpResponseMessage(HttpStatusCode.NoContent);
+    //    }
+    //    else
+    //    {
+    //      return new HttpResponseMessage(HttpStatusCode.NotFound);
+    //    }
+    //  }
+    //  catch (Exception ex)
+    //  {
+    //    return new HttpResponseMessage(HttpStatusCode.ServiceUnavailable);
+    //  }
+    //}
+
+    [HttpGet("GetFavoriteEventId/{id}")]
+    public Favorite GetFavoriteByEventId(int id)
     {
-      return repo.GetFavoriteById(id);
+      return repo.GetFavoriteByEventId(id);
     }
 
-    [HttpPost("RemoveFavorite/{id}")]
-    public HttpResponseMessage RemoveFavoriteById(int id)
+    [HttpPost("RemoveFavoriteEventId/{id}")]
+    public HttpResponseMessage RemoveFavoriteByEventId(int id)
     {
       try
       {
-        if (repo.RemoveFavorite(id) == true)
+        if (repo.RemoveFavoriteByEventId(id) == true)
         {
           return new HttpResponseMessage(HttpStatusCode.NoContent);
         }

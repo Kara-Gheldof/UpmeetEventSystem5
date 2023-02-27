@@ -10,7 +10,8 @@
             <img src="{{favorite.image}}" style="width: 300px;" height="200px;">
             <br>
             <button color="black">Get Details</button>
-            <button color="black">UnFavorite</button>
+            <button type="number" (click)="removeFavorite(favorite.eventId)">UnFavorite</button>
+
         </div>
     </div>
 </div>

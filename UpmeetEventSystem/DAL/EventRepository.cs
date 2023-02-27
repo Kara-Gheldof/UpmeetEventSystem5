@@ -23,7 +23,7 @@ namespace UpmeetEventSystem.DAL
       {
         favoriteEventList.Add(_dbContext.Events.Where(x => x.EventId == favorite.FavoriteEventId).FirstOrDefault());
       }
-      return favoriteEventList;
+      return favoriteEventList.Distinct().ToList();
     }
 
     public Event AddEvent(Event newEvent)
@@ -48,13 +48,29 @@ namespace UpmeetEventSystem.DAL
       _dbContext.SaveChanges();
       return ReturnLastestFavorite(newFavorite.FavoriteEventId);
     }
-    public Favorite GetFavoriteById(int id)
+    //public Favorite GetFavoriteById(int id)
+    //{
+    //  return _dbContext.Favorites.AsNoTracking().FirstOrDefault(x => x.Id == id);
+    //}
+    //public bool RemoveFavoriteById(int id)
+    //{
+    //  Favorite favorite = GetFavoriteById(id);
+    //  if (favorite == null)
+    //  {
+    //    return false;
+    //  }
+    //  _dbContext.Favorites.Remove(favorite);
+    //  _dbContext.SaveChanges();
+    //  return true;
+    //}
+
+    public Favorite GetFavoriteByEventId(int id)
     {
-      return _dbContext.Favorites.AsNoTracking().FirstOrDefault(x => x.Id == id);
+      return _dbContext.Favorites.AsNoTracking().FirstOrDefault(x => x.FavoriteEventId == id);
     }
-    public bool RemoveFavorite(int id)
+    public bool RemoveFavoriteByEventId(int id)
     {
-      Favorite favorite = GetFavoriteById(id);
+      Favorite favorite = GetFavoriteByEventId(id);
       if (favorite == null)
       {
         return false;
