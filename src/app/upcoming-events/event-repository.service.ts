@@ -7,7 +7,6 @@ import { IFavorite } from '../interfaces/favorites';
 })
 export class RepositoryService {
 
-  // favorites:any;
   constructor(private http: HttpClient) { }
 
   apiUri: string = 'https://localhost:7011/api/Event'
@@ -24,12 +23,7 @@ export class RepositoryService {
     return this.http.post(`${this.apiUri}/AddFavorite`,favoriteEvent);
   }
 
-  removeFavorite(favoriteEventId:number) {
-    return this.http.post(`${this.apiUri}/RemoveFavoriteEventId/${favoriteEventId}`,{});
+  removeFavorite(favoriteEventId:IFavorite) {
+    return this.http.post(`${this.apiUri}/RemoveFavoriteEventId/${favoriteEventId.favoriteEventId}`,{});
   }
-
-  // listFavorites(){
-  //   this.getFavorites().subscribe(
-  //     (response) => { this.favorites = response; });
-  // }
 }

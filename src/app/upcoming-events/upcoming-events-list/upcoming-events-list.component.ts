@@ -27,29 +27,17 @@ export class UpcomingEventsListComponent {
     this.repositoryService.getFavorites().subscribe(
       (response) => { this.favorites = response; });
   }
-  // addFavorite(){
-  //   this.repositoryService.addFavorite().subscribe(
-  //     (response) => { this.events = response; });
-  // }
 
   addFavorite(favoriteEventId: number) {
     let newFavoriteEvent: IFavorite = {
       favoriteEventId: favoriteEventId
     };
 
-
-    // this.repositoryService.addFavorite(newFavoriteEvent).subscribe(
-    //   () => {
-    //     this.getEvents();
-    //   }
     this.repositoryService.addFavorite(newFavoriteEvent).subscribe(
       () => {
         this.getFavorites();
       }
-    // this.repositoryService.addFavorite(newFavoriteEvent).subscribe(
-    //   () => {
-    //     this.fav.getFavorites();
-    //   }
     );
   }
+  
 }

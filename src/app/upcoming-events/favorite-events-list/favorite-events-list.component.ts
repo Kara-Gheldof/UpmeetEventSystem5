@@ -13,7 +13,6 @@ export class FavoriteEventsListComponent {
 
   favorites: any;
   
-
   ngOnInit(): void{
     this.getFavorites();
   }
@@ -23,24 +22,17 @@ export class FavoriteEventsListComponent {
       (response) => { this.favorites = response; });
   }
 
-
   removeFavorite(favoriteEventId: number) {
+    let newFavoriteEvent: IFavorite = {
+      favoriteEventId: favoriteEventId
+    };
 
-
-
-    // this.repositoryService.addFavorite(newFavoriteEvent).subscribe(
-    //   () => {
-    //     this.getEvents();
-    //   }
-    this.repositoryService.removeFavorite(favoriteEventId).subscribe(
+    this.repositoryService.removeFavorite(newFavoriteEvent).subscribe(
       () => {
         this.getFavorites();
       }
-    // this.repositoryService.addFavorite(newFavoriteEvent).subscribe(
-    //   () => {
-    //     this.fav.getFavorites();
-    //   }
     );
   }
+  
 }
 
