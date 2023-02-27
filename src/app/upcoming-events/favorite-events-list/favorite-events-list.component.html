@@ -1,17 +1,16 @@
-<p>favorite-events-list works!</p>
-<!-- Event Section -->
-<!-- <div class="w3-container w3-padding-32">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Upcoming Events</h3>
+<!-- Favorite Event Section -->
+<div class="w3-container w3-padding-32">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Events</h3>
 </div>
 
 <div class="w3-row-padding">
-    <div *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
+    <div *ngFor="let favorite of favorites" class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding">{{event.name}}</div>
-            <img src="{{event.image}}" style="width: 300px;" height="200px;">
+            <div class="w3-display-topleft w3-black w3-padding">{{favorite.name}}</div>
+            <img src="{{favorite.image}}" style="width: 300px;" height="200px;">
             <br>
             <button color="black">Get Details</button>
-            <button color="black">Favorite</button>
+            <button color="black">UnFavorite</button>
         </div>
     </div>
-</div> -->
+</div>

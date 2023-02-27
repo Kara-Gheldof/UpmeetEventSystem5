@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RepositoryService } from '../../repository.service';
+import { RepositoryService } from '../event-repository.service';
 
 @Component({
   selector: 'app-favorite-events-list',
@@ -9,27 +9,16 @@ import { RepositoryService } from '../../repository.service';
 export class FavoriteEventsListComponent {
 
   constructor(private repositoryService: RepositoryService) { }
+
+  favorites: any;
+
+  ngOnInit(): void{
+    this.getFavorites();
+  }
+
+  getFavorites(){
+    this.repositoryService.getFavorites().subscribe(
+      (response) => { this.favorites = response; });
+  }
 }
 
-
-
-// @Component({
-//   selector: 'app-upcoming-events-list',
-//   templateUrl: './upcoming-events-list.component.html',
-//   styleUrls: ['./upcoming-events-list.component.css']
-// })
-// export class UpcomingEventsListComponent {
-
-//   constructor(private repositoryService: RepositoryService) { }
-
-//   events: any;
-
-//   ngOnInit(): void{
-//     this.getEvents();
-//   }
-
-//   getEvents(){
-//     this.repositoryService.getEvents().subscribe(
-//       (response) => { this.events = response; });
-//   }
-// }

@@ -13,4 +13,8 @@ export class RepositoryService {
   getEvents() {
     return this.http.get(`${this.apiUri}/ViewEvents`)
   }
+
+  getFavorites() {
+    return this.http.get(`${this.apiUri}/ViewFavorites`)
+  }
 }
