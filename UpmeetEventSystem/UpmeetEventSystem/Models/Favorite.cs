@@ -6,7 +6,7 @@ namespace UpmeetEventSystem.Models
   public class Favorite
   {
     [Key]
-    public int UserId { get; set; }
+    public int FavoriteId { get; set; }
 
     [Display(Name = "Event")]
     public virtual int EventId { get; set; }
