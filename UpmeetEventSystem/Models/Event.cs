@@ -4,7 +4,6 @@ namespace UpmeetEventSystem.Models
 {
   public class Event
   {
-    [Key]
     public int EventId { get; set; }
     public string Name { get; set; }
     public DateTime StartDate { get; set; }

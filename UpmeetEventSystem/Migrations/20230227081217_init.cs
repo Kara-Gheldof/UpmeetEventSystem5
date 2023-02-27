@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace UpmeetEventSystem.Migrations
 {
-    public partial class initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,9 +16,13 @@ namespace UpmeetEventSystem.Migrations
                     EventId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Venue = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,34 +33,23 @@ namespace UpmeetEventSystem.Migrations
                 name: "Favorites",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    EventId = table.Column<int>(type: "int", nullable: false)
+                    FavoriteEventId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Favorites", x => x.UserId);
-                    table.ForeignKey(
-                        name: "FK_Favorites_Events_EventId",
-                        column: x => x.EventId,
-                        principalTable: "Events",
-                        principalColumn: "EventId",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Favorites", x => x.Id);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Favorites_EventId",
-                table: "Favorites",
-                column: "EventId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Favorites");
+                name: "Events");
 
             migrationBuilder.DropTable(
-                name: "Events");
+                name: "Favorites");
         }
     }
 }

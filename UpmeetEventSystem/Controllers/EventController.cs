@@ -35,7 +35,7 @@ namespace UpmeetEventSystem.Controllers
     }
 
     [HttpGet("ViewFavorites")]
-    public List<Favorite> GetFavorites()
+    public List<Event> GetFavorites()
     {
       return repo.GetAllFavorites();
     }
@@ -45,10 +45,9 @@ namespace UpmeetEventSystem.Controllers
     {
       Favorite addFavorite = new Favorite
       {
-        EventId = newFavorite.EventId,
-        Events = newFavorite.Events
+        FavoriteEventId = newFavorite.FavoriteEventId
       };
-      return addFavorite;
+      return repo.AddFavoriteEvent(addFavorite);
     }
 
     [HttpGet("GetFavorite/{id}")]

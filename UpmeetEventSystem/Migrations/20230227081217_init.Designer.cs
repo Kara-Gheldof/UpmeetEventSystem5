@@ -12,8 +12,8 @@ using UpmeetEventSystem.DAL;
 namespace UpmeetEventSystem.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20230225041536_add-images")]
-    partial class addimages
+    [Migration("20230227081217_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,31 +69,18 @@ namespace UpmeetEventSystem.Migrations
 
             modelBuilder.Entity("UpmeetEventSystem.Models.Favorite", b =>
                 {
-                    b.Property<int>("FavoriteId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FavoriteId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("EventId")
+                    b.Property<int>("FavoriteEventId")
                         .HasColumnType("int");
 
-                    b.HasKey("FavoriteId");
-
-                    b.HasIndex("EventId");
+                    b.HasKey("Id");
 
                     b.ToTable("Favorites");
-                });
-
-            modelBuilder.Entity("UpmeetEventSystem.Models.Favorite", b =>
-                {
-                    b.HasOne("UpmeetEventSystem.Models.Event", "Events")
-                        .WithMany()
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Events");
                 });
 #pragma warning restore 612, 618
         }
