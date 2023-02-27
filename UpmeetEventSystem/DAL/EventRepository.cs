@@ -44,6 +44,15 @@ namespace UpmeetEventSystem.DAL
 
     public Favorite AddFavoriteEvent(Favorite newFavorite)
     {
+      int favoriteId = newFavorite.FavoriteEventId;
+      List<Favorite> favorites = _dbContext.Favorites.ToList();
+      foreach (Favorite favorite in favorites)
+      {
+        if (favorite.FavoriteEventId == favoriteId)
+        {
+          return null;
+        }
+      }
       _dbContext.Favorites.Add(newFavorite);
       _dbContext.SaveChanges();
       return ReturnLastestFavorite(newFavorite.FavoriteEventId);
