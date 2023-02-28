@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RepositoryService } from '../event-repository.service';
-import { IEvent } from 'src/app/interfaces/events'
+import { IEvent } from 'src/app/interfaces/events';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-upcoming-events-details',
@@ -9,12 +10,12 @@ import { IEvent } from 'src/app/interfaces/events'
 })
 export class UpcomingEventsDetailsComponent {
 
-  @Input() detailId: string='-1'; 
-  
-  event: IEvent | undefined;
-  showDetails:boolean=false;
+  @Input() detailId: string = '-1';
 
-  constructor(private repositoryService: RepositoryService) {
+  event: IEvent | undefined;
+  showDetails: boolean = false;
+
+  constructor(private repositoryService: RepositoryService, private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -22,7 +23,9 @@ export class UpcomingEventsDetailsComponent {
       (response) => { this.event = response; });
   }
 
-  toggleDetails(): void {
-    this.showDetails = !this.showDetails;
-  }
+  open(content:any) {
+    this.modalService.open(content);
+	}
+
 }
+

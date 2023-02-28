@@ -1,11 +1,13 @@
-<!-- Event Details Section -->
-<button (click)="toggleDetails()">Toggle Details</button>
-<div *ngIf="showDetails" class="w3-container w3-padding-32">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">{{ event!.name }}</h3>
-    <p><strong>Start Date:</strong> {{ event!.startDate | date }}</p>
-    <p><strong>End Date:</strong> {{ event!.endDate | date }}</p>
-    <p><strong>Venue:</strong> {{ event!.venue }}</p>
-    <p><strong>City:</strong> {{ event!.city }}</p>
-    <p><strong>State:</strong> {{ event!.state }}</p>
-    <p><strong>Description:</strong> {{ event!.description }}</p>
+<ng-template #content let-modal>
+<div>
+	<h3>{{ event!.name }}</h3>
+      <p><strong>Start Date:</strong> {{ event!.startDate | date }}</p>
+      <p><strong>End Date:</strong> {{ event!.endDate | date }}</p>
+      <p><strong>Venue:</strong> {{ event!.venue }}</p>
+      <p><strong>City:</strong> {{ event!.city }}</p>
+      <p><strong>State:</strong> {{ event!.state }}</p>
+      <p><strong>Description:</strong> {{ event!.description }}</p>
 </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">View Details</button>
