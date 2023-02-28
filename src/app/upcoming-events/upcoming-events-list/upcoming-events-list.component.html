@@ -4,12 +4,14 @@
 </div>
 
 <div class="w3-row-padding">
-    <div *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
+    <div *ngFor="let item of events" class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding">{{event.name}}</div>
-            <img src="{{event.image}}" style="width: 300px;" height="200px;">
+            <div class="w3-display-topleft w3-black w3-padding">{{item.name}}</div>
+            <img src="{{item.image}}" style="width: 300px;" height="200px;">
             <br>
-            <button color="black">Get Details</button>
+            <div>
+                <app-upcoming-events-details detailId={{item.eventId}}></app-upcoming-events-details>
+            </div>
         </div>
     </div>
 </div>

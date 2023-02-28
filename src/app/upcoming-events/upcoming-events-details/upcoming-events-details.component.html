@@ -1,1 +1,13 @@
-<p>upcoming-events-details works!</p>
+<ng-template #content let-modal>
+<div>
+	<h3>{{ event!.name }}</h3>
+      <p><strong>Start Date:</strong> {{ event!.startDate | date }}</p>
+      <p><strong>End Date:</strong> {{ event!.endDate | date }}</p>
+      <p><strong>Venue:</strong> {{ event!.venue }}</p>
+      <p><strong>City:</strong> {{ event!.city }}</p>
+      <p><strong>State:</strong> {{ event!.state }}</p>
+      <p><strong>Description:</strong> {{ event!.description }}</p>
+</div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">View Details</button>
