@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UpcomingEventsListComponent } from './upcoming-events-list/upcoming-events-list.component';
 import { UpcomingEventsDetailsComponent } from './upcoming-events-details/upcoming-events-details.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,7 +12,8 @@ import { UpcomingEventsDetailsComponent } from './upcoming-events-details/upcomi
     UpcomingEventsDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     UpcomingEventsListComponent

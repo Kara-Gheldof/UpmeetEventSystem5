@@ -34,6 +34,12 @@ namespace UpmeetEventSystem.Controllers
       return repo.GetAllEvents();
     }
 
+    [HttpGet("GetEvent/{id}")]
+    public Event GetEventById(int id)
+    {
+      return repo.GetEventById(id);
+    }
+
     [HttpGet("ViewFavorites")]
     public List<Favorite> GetFavorites()
     {

@@ -29,6 +29,10 @@ namespace UpmeetEventSystem.DAL
     {
       return _dbContext.Favorites.AsNoTracking().FirstOrDefault(x => x.FavoriteId == id);
     }
+    public Event GetEventById(int id)
+    {
+      return _dbContext.Events.AsNoTracking().FirstOrDefault(x => x.EventId == id);
+    }
     public bool RemoveFavorite(int id)
     {
       Favorite favorite = GetFavoriteById(id);
@@ -40,6 +44,6 @@ namespace UpmeetEventSystem.DAL
       _dbContext.SaveChanges();
       return true;
     }
-   
+
   }
 }
