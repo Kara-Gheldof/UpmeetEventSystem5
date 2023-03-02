@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports:[
-    UpcomingEventsListComponent
+    UpcomingEventsListComponent,
   ]
 })
 export class UpcomingEventsModule { }
