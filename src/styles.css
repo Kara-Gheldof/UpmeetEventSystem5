@@ -14,65 +14,38 @@ button {
   display: inline-block;
   font-size: 16px;
 }
-/* Popup container */
-.popup {
-  position: relative;
+
+.star {
+  visibility:hidden;
+  font-size:30px;
+  cursor:pointer;
+}
+
+.star:before {
+  content: "\2605";
+  visibility:visible;
+ }
+
+ .star:checked:before {
+  content: "\2606";
+ }
+
+ .close-button {
+  border: none;
   display: inline-block;
-  cursor: pointer;
-}
-
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
   text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
+  cursor: pointer;
+  white-space: nowrap
+}
+
+.topright {
   position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-
-  to {
-      opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-
-  to {
-      opacity: 1;
-  }
+  right: 0;
+  top: 0
 }

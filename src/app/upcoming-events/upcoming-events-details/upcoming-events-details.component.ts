@@ -27,5 +27,9 @@ export class UpcomingEventsDetailsComponent {
     this.modalService.open(content);
 	}
 
+  
+  close(content:any) {
+    this.modalService.dismissAll(content);
+	}
 }
 
