@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IFavorite } from '../interfaces/favorites';
 import { IEvent } from '../interfaces/events';
 
 @Injectable({
@@ -17,5 +18,17 @@ export class RepositoryService {
 
   getEventById(eventId: number){
     return this.http.get<IEvent>(`${this.apiUri}/GetEvent/${eventId}`)
+  }
+
+  getFavorites() {
+    return this.http.get(`${this.apiUri}/ViewFavorites`)
+  }
+
+  addFavorite(favoriteEvent:IFavorite) {
+    return this.http.post(`${this.apiUri}/AddFavorite`,favoriteEvent);
+  }
+
+  removeFavorite(favoriteEventId:IFavorite) {
+    return this.http.post(`${this.apiUri}/RemoveFavoriteEventId/${favoriteEventId.favoriteEventId}`,{});
   }
 }

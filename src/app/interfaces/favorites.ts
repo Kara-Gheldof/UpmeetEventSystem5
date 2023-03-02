@@ -1,4 +1,3 @@
 export interface IFavorite{
-eventid: number;
-events: Event;
+favoriteEventId: number;
 }

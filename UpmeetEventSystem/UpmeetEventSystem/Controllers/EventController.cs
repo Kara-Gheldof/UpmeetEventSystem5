@@ -41,7 +41,7 @@ namespace UpmeetEventSystem.Controllers
     }
 
     [HttpGet("ViewFavorites")]
-    public List<Favorite> GetFavorites()
+    public List<Event> GetFavorites()
     {
       return repo.GetAllFavorites();
     }
@@ -51,24 +51,49 @@ namespace UpmeetEventSystem.Controllers
     {
       Favorite addFavorite = new Favorite
       {
-        EventId = newFavorite.EventId,
-        Events = newFavorite.Events
+        FavoriteEventId = newFavorite.FavoriteEventId
       };
-      return addFavorite;
+      return repo.AddFavoriteEvent(addFavorite);
     }
 
-    [HttpGet("GetFavorite/{id}")]
+    [HttpGet("GetFavoriteId/{id}")]
     public Favorite GetFavoriteById(int id)
     {
-      return repo.GetFavoriteById(id);
+      return repo.GetFavoriteId(id);
     }
 
-    [HttpPost("RemoveFavorite/{id}")]
+    [HttpPost("RemoveFavoriteId/{id}")]
     public HttpResponseMessage RemoveFavoriteById(int id)
     {
       try
       {
-        if (repo.RemoveFavorite(id) == true)
+        if (repo.RemoveFavoriteId(id) == true)
+        {
+          return new HttpResponseMessage(HttpStatusCode.NoContent);
+        }
+        else
+        {
+          return new HttpResponseMessage(HttpStatusCode.NotFound);
+        }
+      }
+      catch (Exception ex)
+      {
+        return new HttpResponseMessage(HttpStatusCode.ServiceUnavailable);
+      }
+    }
+
+    [HttpGet("GetFavoriteEventId/{id}")]
+    public Favorite GetFavoriteByEventId(int id)
+    {
+      return repo.GetFavoriteEventId(id);
+    }
+
+    [HttpPost("RemoveFavoriteEventId/{id}")]
+    public HttpResponseMessage RemoveFavoriteByEventId(int id)
+    {
+      try
+      {
+        if (repo.RemoveFavoriteEventId(id) == true)
         {
           return new HttpResponseMessage(HttpStatusCode.NoContent);
         }

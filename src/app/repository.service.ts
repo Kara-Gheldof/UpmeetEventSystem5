@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class RepositoryService {
 
-  constructor(private http: HttpClient) { }
+  // constructor(private http: HttpClient) { }
 
-  apiUri: string = 'https://localhost:7011/api/Event'
+  // apiUri: string = 'https://localhost:7011/api/Event'
 
-  getFavoriteEvents(){
-    return this.http.get(`${this.apiUri}/ViewFavorites`)
-  }
+  // getFavoriteEvents(){
+  //   return this.http.get(`${this.apiUri}/ViewFavorites`)
+  // }
 }

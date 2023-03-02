@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IFavorite } from 'src/app/interfaces/favorites';
 import { RepositoryService } from '../event-repository.service';
 import { Router } from '@angular/router';
 import { IEvent } from 'src/app/interfaces/events';
@@ -12,7 +13,9 @@ export class UpcomingEventsListComponent {
 
   constructor(private repositoryService: RepositoryService, private router: Router) { }
 
-  events:any;
+  events: any;
+  favorites: any;
+
   showDetails:boolean=false;
 
   ngOnInit(): void{
@@ -23,4 +26,34 @@ export class UpcomingEventsListComponent {
     this.repositoryService.getEvents().subscribe(
       (response) => { this.events = response; });
   }
+
+  getFavorites(){
+    this.repositoryService.getFavorites().subscribe(
+      (response) => { this.favorites = response; });
+  }
+
+  addFavorite(favoriteEventId: number) {
+    let newFavoriteEvent: IFavorite = {
+      favoriteEventId: favoriteEventId
+    };
+
+    this.repositoryService.addFavorite(newFavoriteEvent).subscribe(
+      () => {
+        this.getFavorites();
+      }
+    );
+  }
+
+  removeFavorite(favoriteEventId: number) {
+    let newFavoriteEvent: IFavorite = {
+      favoriteEventId: favoriteEventId
+    };
+
+    this.repositoryService.removeFavorite(newFavoriteEvent).subscribe(
+      () => {
+        this.getFavorites();
+      }
+    );
+  }
+  
 }
