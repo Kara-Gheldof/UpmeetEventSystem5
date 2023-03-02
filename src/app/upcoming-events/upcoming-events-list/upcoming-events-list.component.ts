@@ -39,5 +39,17 @@ export class UpcomingEventsListComponent {
       }
     );
   }
+
+  removeFavorite(favoriteEventId: number) {
+    let newFavoriteEvent: IFavorite = {
+      favoriteEventId: favoriteEventId
+    };
+
+    this.repositoryService.removeFavorite(newFavoriteEvent).subscribe(
+      () => {
+        this.getFavorites();
+      }
+    );
+  }
   
 }
