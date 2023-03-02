@@ -24,6 +24,12 @@ namespace UpmeetEventSystem.DAL
       return _dbContext.Events.OrderByDescending(x => x.EventId).FirstOrDefault();
     }
 
+
+    public Event GetEventById(int id)
+    {
+      return _dbContext.Events.AsNoTracking().FirstOrDefault(x => x.EventId == id);
+    }
+
     public Favorite AddFavoriteEvent(Favorite newFavorite)
     {
       int favoriteId = newFavorite.FavoriteEventId;

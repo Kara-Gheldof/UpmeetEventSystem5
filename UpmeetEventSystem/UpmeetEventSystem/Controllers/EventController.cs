@@ -34,6 +34,18 @@ namespace UpmeetEventSystem.Controllers
       return repo.GetAllEvents();
     }
 
+    [HttpGet("GetEvent/{id}")]
+    public Event GetEventById(int id)
+    {
+      return repo.GetEventById(id);
+    }
+
+    [HttpGet("ViewFavorites")]
+    public List<Event> GetFavorites()
+    {
+      return repo.GetAllFavorites();
+    }
+
     [HttpPost("AddFavorite")]
     public Favorite AddFavorite(Favorite newFavorite)
     {
@@ -42,12 +54,6 @@ namespace UpmeetEventSystem.Controllers
         FavoriteEventId = newFavorite.FavoriteEventId
       };
       return repo.AddFavoriteEvent(addFavorite);
-    }
-
-    [HttpGet("ViewFavorites")]
-    public List<Event> GetFavorites()
-    {
-      return repo.GetAllFavorites();
     }
 
     [HttpGet("GetFavoriteId/{id}")]

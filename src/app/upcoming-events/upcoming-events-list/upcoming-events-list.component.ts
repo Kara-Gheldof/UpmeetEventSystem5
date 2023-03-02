@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IFavorite } from 'src/app/interfaces/favorites';
 import { RepositoryService } from '../event-repository.service';
+import { Router } from '@angular/router';
+import { IEvent } from 'src/app/interfaces/events';
 
 @Component({
   selector: 'app-upcoming-events-list',
@@ -9,10 +11,12 @@ import { RepositoryService } from '../event-repository.service';
 })
 export class UpcomingEventsListComponent {
 
-  constructor(private repositoryService: RepositoryService) { }
+  constructor(private repositoryService: RepositoryService, private router: Router) { }
 
   events: any;
   favorites: any;
+
+  showDetails:boolean=false;
 
   ngOnInit(): void{
     this.getEvents();
