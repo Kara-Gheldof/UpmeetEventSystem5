@@ -1,13 +1,25 @@
 <ng-template #content let-modal>
-<div>
-	<h3>{{ event!.name }}</h3>
-      <p><strong>Start Date:</strong> {{ event!.startDate | date }}</p>
-      <p><strong>End Date:</strong> {{ event!.endDate | date }}</p>
-      <p><strong>Venue:</strong> {{ event!.venue }}</p>
-      <p><strong>City:</strong> {{ event!.city }}</p>
-      <p><strong>State:</strong> {{ event!.state }}</p>
-      <p><strong>Description:</strong> {{ event!.description }}</p>
-</div>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <div id='ModalBox'>
+        <div>
+            <header class="w3-container w3-black">
+                <span (click)="close(content)" class="w3-button w3-display-topright">&times;</span>
+                <h3>{{ event!.name }}</h3>
+            </header>
+            <div>
+                <br>
+                <p *ngIf="event!.startDate != event!.endDate">
+                    <strong>Event Dates</strong> {{ event!.startDate | date }} - {{ event!.endDate | date }}
+                </p>
+                <p *ngIf="event!.startDate == event! .endDate">
+                    <strong>Event Date</strong> {{ event!.startDate | date }}
+                </p>
+                <p><strong>Venue:</strong> {{ event!.venue }}</p>
+                <p><strong>Location:</strong> {{ event!.city }}, {{ event!.state }}</p>
+                <p><strong>Description:</strong> {{ event!.description }}</p>
+            </div>
+        </div>
+    </div>
 </ng-template>
 
 <button class="btn btn-lg btn-outline-primary" (click)="open(content)">View Details</button>

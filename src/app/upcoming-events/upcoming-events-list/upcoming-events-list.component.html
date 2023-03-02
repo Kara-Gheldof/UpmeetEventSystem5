@@ -5,6 +5,8 @@
 
 <div class="w3-row-padding">
     <div *ngFor="let item of events" class="w3-col l3 m6 w3-margin-bottom">
+        <input id="star1" class="star" type="checkbox">
+            <div for="star1" align="center">Add Event To Favorites</div>
         <div class="w3-display-container">
             <div class="w3-display-topleft w3-black w3-padding">{{item.name}}</div>
             <img src="{{item.image}}" style="width: 300px;" height="200px;">
