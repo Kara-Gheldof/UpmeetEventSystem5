@@ -5,13 +5,11 @@ namespace UpmeetEventSystem.Models
 {
   public class Favorite
   {
-    [Key]
-    public int FavoriteId { get; set; }
+    //[Key]
+    //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get; set; }
 
-    [Display(Name = "Event")]
-    public virtual int EventId { get; set; }
-
-    [ForeignKey("EventId")]
-    public virtual Event Events { get; set; }
+    //[ForeignKey("EventId")]
+    public int FavoriteEventId { get; set; }
   }
 }
