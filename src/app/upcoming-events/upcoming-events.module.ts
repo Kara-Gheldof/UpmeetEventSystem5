@@ -4,12 +4,10 @@ import { UpcomingEventsListComponent } from './upcoming-events-list/upcoming-eve
 import { UpcomingEventsDetailsComponent } from './upcoming-events-details/upcoming-events-details.component';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [
     UpcomingEventsListComponent,
-    UpcomingEventsDetailsComponent
+    UpcomingEventsDetailsComponent,
   ],
   imports: [
     CommonModule,
