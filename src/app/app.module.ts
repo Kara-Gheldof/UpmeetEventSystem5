@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UpcomingEventsModule } from './upcoming-events/upcoming-events.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TeamInfoModule } from './team-info/team-info.module';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     UpcomingEventsModule,
-    NgbModule
+    NgbModule,
+    TeamInfoModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [AppComponent]

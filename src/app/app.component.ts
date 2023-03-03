@@ -11,15 +11,4 @@ export class AppComponent {
   title = 'UpmeetEventSystem';
 
   constructor(private repositoryService: RepositoryService) { }
-
-  // favorites: any;
-
-  // ngOnInit(): void{
-  //   this.getFavorites();
-  // }
-
-  // getFavorites(){
-  //   this.repositoryService.getFavoriteEvents().subscribe(
-  //     (response) => { this.favorites = response; });
-  // }
 }
