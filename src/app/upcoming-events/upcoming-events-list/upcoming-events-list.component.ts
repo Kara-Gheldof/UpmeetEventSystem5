@@ -20,6 +20,7 @@ export class UpcomingEventsListComponent {
 
   ngOnInit(): void{
     this.getEvents();
+    this.getFavorites();
   }
 
   getEvents(){
@@ -55,5 +56,4 @@ export class UpcomingEventsListComponent {
       }
     );
   }
-  
 }
