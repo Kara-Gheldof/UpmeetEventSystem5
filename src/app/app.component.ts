@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RepositoryService } from './repository.service';
+import { RepositoryService } from './upcoming-events/event-repository.service';
 import { IEvent } from './interfaces/events';
 
 @Component({
@@ -12,14 +12,5 @@ export class AppComponent {
 
   constructor(private repositoryService: RepositoryService) { }
 
-  // favorites: any;
 
-  // ngOnInit(): void{
-  //   this.getFavorites();
-  // }
-
-  // getFavorites(){
-  //   this.repositoryService.getFavoriteEvents().subscribe(
-  //     (response) => { this.favorites = response; });
-  // }
 }
