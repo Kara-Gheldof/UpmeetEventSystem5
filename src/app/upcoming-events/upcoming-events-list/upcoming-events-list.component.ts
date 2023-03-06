@@ -15,12 +15,11 @@ export class UpcomingEventsListComponent {
 
   events: any;
   favorites: any;
-  star1: any;
-
   showDetails:boolean=false;
 
   ngOnInit(): void{
     this.getEvents();
+    this.getFavorites();
   }
 
   getEvents(){
