@@ -15,6 +15,7 @@ export class UpcomingEventsListComponent {
 
   events: any;
   favorites: any;
+  star1: any;
 
   showDetails:boolean=false;
 
