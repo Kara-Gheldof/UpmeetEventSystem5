@@ -4,7 +4,7 @@
 </div>
 
 <div class="w3-row-padding">
-    <div onload="getFavorites()" *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
+    <div *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
         <div *ngIf="checkFavorite(event.eventId)">
             <input (click)="removeFavorite(event.eventId)" id="star1" class="star" type="checkbox">
             <div for="star1" align="center">Favorite Event</div>
