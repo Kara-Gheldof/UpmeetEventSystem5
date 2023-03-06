@@ -29,7 +29,9 @@
 
 <div class="w3-row-padding">
     <div *ngFor="let fave of favorites" class="w3-col l3 m6 w3-margin-bottom">
+
         <p><input (click)="removeFavorite(fave.eventId)" id="star1" class="star" type="checkbox"></p>
+
         <div class="w3-display-container">
             <div class="w3-display-topleft w3-black w3-padding">{{fave.name}}</div>
             <img src="{{fave.image}}" style="width: 300px;" height="200px;">
