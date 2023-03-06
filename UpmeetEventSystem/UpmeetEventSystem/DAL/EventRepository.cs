@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using UpmeetEventSystem.Models;
 
 namespace UpmeetEventSystem.DAL

@@ -21,7 +21,7 @@ export class RepositoryService {
   }
 
   getFavorites() {
-    return this.http.get(`${this.apiUri}/ViewFavorites`)
+    return this.http.get<IFavorite>(`${this.apiUri}/ViewFavorites`)
   }
 
   addFavorite(favoriteEvent:IFavorite) {
