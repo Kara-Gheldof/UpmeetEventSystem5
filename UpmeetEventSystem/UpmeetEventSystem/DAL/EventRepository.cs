@@ -95,5 +95,23 @@ namespace UpmeetEventSystem.DAL
       _dbContext.SaveChanges();
       return true;
     }
+
+    public List<Contact> GetAllContacts()
+    {
+      return _dbContext.Contacts.ToList();
+    }
+
+    public Contact AddContact(Contact newContact)
+    {
+      _dbContext.Contacts.Add(newContact);
+      _dbContext.SaveChanges();
+      return ReturnLastestContact(newContact.Id);
+    }
+
+    private Contact ReturnLastestContact(int id)
+    {
+      return _dbContext.Contacts.OrderByDescending(x => x.Id).FirstOrDefault();
+    }
+
   }
 }
