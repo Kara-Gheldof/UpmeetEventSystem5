@@ -55,5 +55,16 @@ export class UpcomingEventsListComponent {
       }
     );
   }
+
+  checkFavorite(incomingId: any): Boolean{
+    if(this.favorites){
+      for (let i = 0; i < this.favorites.length; i++){
+        if(this.favorites[i].eventId===incomingId){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
   
 }

@@ -4,15 +4,20 @@
 </div>
 
 <div class="w3-row-padding">
-    <div *ngFor="let item of events" class="w3-col l3 m6 w3-margin-bottom">
-        <p><input (click)="addFavorite(item.eventId)" id="star1" class="star" type="checkbox" checked></p>
-            <!-- <div for="star1" align="center">Favorite</div> -->
-        <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding">{{item.name}}</div>
-            <img src="{{item.image}}" style="width: 300px;" height="200px;">
-            <br>
-            <p style="width: 300px;"><app-upcoming-events-details detailId={{item.eventId}}></app-upcoming-events-details></p>
+    <div onload="getFavorites()" *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
+        <div *ngIf="checkFavorite(event.eventId)">
+            <p><input (click)="removeFavorite(event.eventId)" id="star1" class="star" type="checkbox"></p>
         </div>
+
+        <div *ngIf="!checkFavorite(event.eventId)">
+            <p><input (click)="addFavorite(event.eventId)" id="star2" class="star" type="checkbox" checked></p>
+        </div>
+        
+        <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">{{event.name}}</div>
+            <img src="{{event.image}}" style="width: 300px;" height="200px;">
+            <br>
+            <p style="width: 300px;"><app-upcoming-events-details detailId={{event.eventId}}></app-upcoming-events-details></p>        </div>
     </div>
 </div>
 
@@ -21,25 +26,12 @@
 </div>
 
 <div class="w3-row-padding">
-    <div *ngFor="let item of favorites" class="w3-col l3 m6 w3-margin-bottom">
-        <p><input (click)="removeFavorite(item.eventId)" id="star1" class="star" type="checkbox"></p>
-            <!-- <div for="star1" align="center">Favorite</div> -->
+    <div *ngFor="let fave of favorites" class="w3-col l3 m6 w3-margin-bottom">
+        <p><input (click)="removeFavorite(fave.eventId)" id="star1" class="star" type="checkbox"></p>
         <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding">{{item.name}}</div>
-            <img src="{{item.image}}" style="width: 300px;" height="200px;">
+            <div class="w3-display-topleft w3-black w3-padding">{{fave.name}}</div>
+            <img src="{{fave.image}}" style="width: 300px;" height="200px;">
             <br>
-            <p style="width: 300px;"><app-upcoming-events-details detailId={{item.eventId}}></app-upcoming-events-details></p>
-        </div>
+            <p style="width: 300px;"><app-upcoming-events-details detailId={{fave.eventId}}></app-upcoming-events-details></p>        </div>
     </div>
 </div>
-<!-- <div class="w3-row-padding">
-    <div *ngFor="let item of favorites" class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding">{{item.name}}</div>
-            <img src="{{item.image}}" style="width: 300px;" height="200px;">
-            <br>
-            <button type="number" (click)="removeFavorite(item.eventId)">UnFavorite</button>
-            <app-upcoming-events-details detailId={{item.eventId}}></app-upcoming-events-details>
-        </div>
-    </div>
-</div> -->
