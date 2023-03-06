@@ -1,11 +1,21 @@
-<div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-    <p>Lets get in touch and talk about your next event.</p>
-    <form action="/action_page.php" target="_blank">
+
+    <!-- <form action="/action_page.php" target="_blank">
         <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
         <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
         <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
         <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+        <button class="w3-button w3-black w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+    </form> -->
+    <div class="w3-container w3-padding-32" id="contact">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+        <p>Lets get in touch and talk about your next event.</p>
+    <form #contactForm="ngForm" (ngSubmit)="sendContact(contactForm)">
+        <input class="w3-input w3-border" placeholder="Name" name="name" id="name" ngModel>
+        <input class="w3-input w3-section w3-border" placeholder="Email" name="email" id="email" ngModel>
+        <input class="w3-input w3-section w3-border" placeholder="Subject" name="subject" id="subject" ngModel>
+        <input class="w3-input w3-section w3-border" placeholder="Comment" name="comment" id="comment" ngModel>
         <button class="w3-button w3-black w3-section" type="submit">
             <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
