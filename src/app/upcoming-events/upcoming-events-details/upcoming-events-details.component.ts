@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RepositoryService } from '../event-repository.service';
-import { IEvent } from 'src/app/interfaces/events';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { IEvent } from '../../interfaces/events';
 
 @Component({
   selector: 'app-upcoming-events-details',

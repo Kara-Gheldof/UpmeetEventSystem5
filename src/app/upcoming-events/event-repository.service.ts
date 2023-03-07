@@ -36,4 +36,7 @@ export class RepositoryService {
   addContact(newContact:IContact) {
     return this.http.post(`${this.apiUri}/AddContact`,newContact);
   }
+  addNewEvent(newEvent:IEvent) {
+    return this.http.post(`${this.apiUri}/AddEvent`, newEvent)
+  }
 }

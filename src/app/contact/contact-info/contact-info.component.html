@@ -6,8 +6,24 @@
         <input class="w3-input w3-section w3-border" placeholder="Email" name="email" id="email" ngModel>
         <input class="w3-input w3-section w3-border" placeholder="Subject" name="subject" id="subject" ngModel>
         <input class="w3-input w3-section w3-border" placeholder="Comment" name="comment" id="comment" ngModel>
-        <button class="w3-button w3-black w3-section" type="submit">
+        <button class="w3-button w3-black w3-section" type="submit"  (click)="open(content)">
             <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
     </form>
 </div>
+
+<ng-template #content let-modal>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <div id='ModalBox'>
+        <div>
+            <header class="w3-container w3-black">
+                <span (click)="close(content)" class="w3-button w3-display-topright">&times;</span>
+                <h3>Thank you for your feedback!</h3>
+            </header>
+            <div>
+            <br>
+            <p>We will return your message as soon as possible</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
