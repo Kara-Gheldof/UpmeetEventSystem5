@@ -1,14 +1,23 @@
+<div class="w3-container w3-padding-32" id="addevent">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Add New Event</h3>
+    <p>Please provide the following information for the new upcoming event:</p>
     <form #newEvent="ngForm" (ngSubmit)="addNewEvent(newEvent)">
-    <input class="w3-input w3-border" type="text" placeholder="Name of Event" name="nameOfEvent" id="nameOfEvent" ngModel>
-    <p>Date of Event</p>
-    <input class="w3-input w3-section w3-border" type="date" placeholder="Start Date" name="startDate" id="startDate" ngModel>
-    <input class="w3-input w3-section w3-border" type="date" placeholder="End Date" name="endDate" id="endDate" ngModel>
-    <input class="w3-input w3-section w3-border" type="text" placeholder="Description" name="description" id="description" ngModel>
-    <input class="w3-input w3-section w3-border" type="text" placeholder="Venue" name="venue" id="venue" ngModel>
-    <input class="w3-input w3-section w3-border" type="text" placeholder="City" name="city" id="city" ngModel>
-    <input class="w3-input w3-section w3-border" type="text" placeholder="State" name="state" id="state" ngModel>
-    <input class="w3-input w3-section w3-border" type="text" placeholder="Submit an image URL to represent your event" name="image" id="image" ngModel>
-    <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> SUBMIT EVENT
-    </button>
-</form>
+        <input class="w3-input w3-border" type="text" placeholder="Name of Event" name="nameOfEvent" id="nameOfEvent"
+            ngModel>
+        <p>Event Start Date</p>
+        <input class="w3-input w3-section w3-border" type="date" placeholder="Start Date" name="startDate"
+            id="startDate" ngModel>
+        <p>Event End Date</p>
+        <input class="w3-input w3-section w3-border" type="date" placeholder="End Date" name="endDate" id="endDate"
+            ngModel>
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Description" name="description"
+            id="description" ngModel>
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Venue" name="venue" id="venue" ngModel>
+        <input class="w3-input w3-section w3-border" type="text" placeholder="City" name="city" id="city" ngModel>
+        <input class="w3-input w3-section w3-border" type="text" placeholder="State" name="state" id="state" ngModel>
+        <input class="w3-input w3-section w3-border" type="text"
+            placeholder="Submit an image URL to represent your event" name="image" id="image" ngModel>
+        <button class="w3-button w3-black w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SUBMIT EVENT
+        </button>
+    </form>

@@ -1,6 +1,6 @@
     <div class="w3-container w3-padding-32" id="contact">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-        <p>Lets get in touch and talk about your next event.</p>
+        <p>Questions or feedback? Submit your information below to contact us.</p>
     <form #contactForm="ngForm" (ngSubmit)="sendContact(contactForm)">
         <input class="w3-input w3-border" placeholder="Name" name="name" id="name" ngModel>
         <input class="w3-input w3-section w3-border" placeholder="Email" name="email" id="email" ngModel>
@@ -18,11 +18,11 @@
         <div>
             <header class="w3-container w3-black">
                 <span (click)="close(content)" class="w3-button w3-display-topright">&times;</span>
-                <h3>Thank you for your feedback!</h3>
+                <h3>Thanks for contacting us!</h3>
             </header>
             <div>
             <br>
-            <p>We will return your message as soon as possible</p>
+            <p>We will return your message as soon as possible.</p>
             </div>
         </div>
     </div>
