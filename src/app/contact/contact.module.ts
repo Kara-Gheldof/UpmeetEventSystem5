@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -9,7 +11,8 @@ import { ContactInfoComponent } from './contact-info/contact-info.component';
     ContactInfoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     ContactInfoComponent
