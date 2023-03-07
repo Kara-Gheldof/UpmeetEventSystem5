@@ -18,6 +18,7 @@ namespace UpmeetEventSystem.DAL
 
     public DbSet<Event> Events { get; set; }
     public DbSet<Favorite> Favorites { get; set; }
+    public DbSet<Contact> Contacts { get; set; }
 
     private static IConfigurationRoot _configuration;
 

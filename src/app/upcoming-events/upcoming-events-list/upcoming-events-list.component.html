@@ -4,39 +4,40 @@
 </div>
 
 <div class="w3-row-padding">
-    <div *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
+    <div onload="getFavorites()" *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
         <div *ngIf="checkFavorite(event.eventId)">
-            <input (click)="removeFavorite(event.eventId)" id="star1" class="star" type="checkbox">
-            <div for="star1" align="center">Favorite Event</div>
+            <p><input (click)="removeFavorite(event.eventId)" id="star1" class="star" type="checkbox"></p>
         </div>
 
         <div *ngIf="!checkFavorite(event.eventId)">
-            <input (click)="addFavorite(event.eventId)" id="star2" class="star" type="checkbox" checked>
-            <div for="star2" align="center">Favorite Event</div>
+            <p><input (click)="addFavorite(event.eventId)" id="star2" class="star" type="checkbox" checked></p>
         </div>
-        
+
         <div class="w3-display-container">
             <div class="w3-display-topleft w3-black w3-padding">{{event.name}}</div>
             <img src="{{event.image}}" style="width: 300px;" height="200px;">
             <br>
-            <app-upcoming-events-details detailId={{event.eventId}}></app-upcoming-events-details>
+            <p style="width: 300px;"><app-upcoming-events-details
+                    detailId={{event.eventId}}></app-upcoming-events-details></p>
         </div>
     </div>
 </div>
 
-<div class="w3-container w3-padding-32">
+<div *ngIf="(favorites.length >= 1)" class="w3-container w3-padding-32">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Events</h3>
 </div>
 
 <div class="w3-row-padding">
     <div *ngFor="let fave of favorites" class="w3-col l3 m6 w3-margin-bottom">
-        <input (click)="removeFavorite(fave.eventId)" id="star1" class="star" type="checkbox">
-        <div for="star1" align="center">Remove Favorite</div>
+
+        <p><input (click)="removeFavorite(fave.eventId)" id="star1" class="star" type="checkbox"></p>
+
         <div class="w3-display-container">
             <div class="w3-display-topleft w3-black w3-padding">{{fave.name}}</div>
             <img src="{{fave.image}}" style="width: 300px;" height="200px;">
             <br>
-            <app-upcoming-events-details detailId={{fave.eventId}}></app-upcoming-events-details>
+            <p style="width: 300px;"><app-upcoming-events-details
+                    detailId={{fave.eventId}}></app-upcoming-events-details></p>
         </div>
     </div>
 </div>

@@ -107,5 +107,24 @@ namespace UpmeetEventSystem.Controllers
         return new HttpResponseMessage(HttpStatusCode.ServiceUnavailable);
       }
     }
+
+    [HttpGet("ViewContacts")]
+    public List<Contact> GetAllContacts()
+    {
+      return repo.GetAllContacts();
+    }
+
+    [HttpPost("AddContact")]
+    public Contact AddContact(Contact newContact)
+    {
+      Contact addContact = new Contact
+      {
+        Name = newContact.Name,
+        Email = newContact.Email,
+        Subject = newContact.Subject,
+        Comment = newContact.Comment
+      };
+      return repo.AddContact(addContact);
+    }
   }
 }
