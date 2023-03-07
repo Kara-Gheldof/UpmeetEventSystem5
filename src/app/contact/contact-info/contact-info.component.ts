@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { IContact } from 'src/app/interfaces/contacts';
+import { IContact } from '../../interfaces/contacts';
 import { RepositoryService } from '../../upcoming-events/event-repository.service';
 
 
@@ -17,6 +17,15 @@ export class ContactInfoComponent {
 
   ngOnInit(): void {
   }
+  
+  open(content:any) {
+    this.modalService.open(content);
+	}
+
+  
+  close(content:any) {
+    this.modalService.dismissAll(content);
+	}
 
   sendContact(form:NgForm){
     let newContact: IContact = {

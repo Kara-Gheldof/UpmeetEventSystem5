@@ -6,11 +6,13 @@
 <div class="w3-row-padding">
     <div onload="getFavorites()" *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
         <div *ngIf="checkFavorite(event.eventId)">
-            <p><input (click)="removeFavorite(event.eventId)" id="star1" class="star" type="checkbox"></p>
+        <input (click)="removeFavorite(event.eventId)" id="star1" class="star" type="checkbox">
+            <div for="star1" align="center" style="width: 200px;">Remove Favorite</div>
         </div>
 
         <div *ngIf="!checkFavorite(event.eventId)">
-            <p><input (click)="addFavorite(event.eventId)" id="star2" class="star" type="checkbox" checked></p>
+            <input (click)="addFavorite(event.eventId)" id="star2" class="star" type="checkbox" checked>
+            <div for="star2" align="center" style="width: 200px;">Add Favorite</div>
         </div>
 
         <div class="w3-display-container">
@@ -23,15 +25,16 @@
     </div>
 </div>
 
-<div *ngIf="(favorites.length >= 1)" class="w3-container w3-padding-32">
+<div class="w3-container w3-padding-32">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Events</h3>
+    <div *ngIf="(favorites.length == 0)">You currently have no favorites. Click the star to add favorites from the list!</div>
 </div>
 
-<div class="w3-row-padding">
+<div class="w3-container w3-padding-32" id="favorites">
     <div *ngFor="let fave of favorites" class="w3-col l3 m6 w3-margin-bottom">
 
-        <p><input (click)="removeFavorite(fave.eventId)" id="star1" class="star" type="checkbox"></p>
-
+        <input (click)="removeFavorite(fave.eventId)" id="star1" class="star" type="checkbox">
+        <div for="star1" align="center" style="width: 200px;">Remove Favorite</div>
         <div class="w3-display-container">
             <div class="w3-display-topleft w3-black w3-padding">{{fave.name}}</div>
             <img src="{{fave.image}}" style="width: 300px;" height="200px;">

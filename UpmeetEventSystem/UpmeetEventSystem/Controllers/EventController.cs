@@ -23,7 +23,8 @@ namespace UpmeetEventSystem.Controllers
         Venue = newEvent.Venue,
         City = newEvent.City,
         State = newEvent.State,
-        Description = newEvent.Description
+        Description = newEvent.Description,
+        Image = newEvent.Image
       };
       return repo.AddEvent(addEvent);
     }

@@ -17,6 +17,7 @@
             <div class="w3-right w3-hide-small">
                 <a href="#events" class="w3-bar-item w3-button">Upcoming Events</a>
                 <a href="#favorites" class="w3-bar-item w3-button">Favorite Events</a>
+                <a href="#addevent" class="w3-bar-item w3-button">Add Events</a>
                 <a href="#meet" class="w3-bar-item w3-button">Meet Our Team</a>
                 <a href="#contact" class="w3-bar-item w3-button">Contact</a>
             </div>
@@ -31,8 +32,8 @@
             <span text-align="center" class="w3-padding w3-black w3-opacity-min"><b>UPMEET</b></span>
             <span text-color="black">EVENT SYSTEM</span>
         </h1>
-        <img src="https://voices.whitman.syr.edu/wp-content/uploads/2015/02/UpComingEvents_Large.png" alt="Events"
-            width="1000" height="400" class="center">
+        <img src="https://www.shutterstock.com/image-vector/happy-people-crowd-holiday-party-260nw-2196145391.jpg" alt="Events"
+            width="1200" height="400" class="center">
     </header>
 
     <!-- Page content -->
@@ -41,35 +42,18 @@
     <div class="w3-container w3-padding-32" id="favorites"></div>
 
     <!-- Add Event Section -->
-    <div class="w3-container w3-padding-32" id="contact">
+    <div class="w3-container w3-padding-32" id="addevent">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Add Event</h3>
         <p>What events would you like to see added to the system?</p>
-        <form action="/action_page.php" target="_blank">
-            <input class="w3-input w3-border" type="text" placeholder="Name of Event" required name="Name of Event">
-            <p>Date of Event</p>
-            <input class="w3-input w3-section w3-border" type="date" placeholder="Date" required name="Date">
-            <p>Start Time</p>
-            <input class="w3-input w3-section w3-border" type="time" placeholder="Start Time" required
-                name="Start Time">
-            <p>End Time</p>
-            <input class="w3-input w3-section w3-border" type="time" placeholder="End Time" required name="End Time">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Description" required
-                name="Description">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="Venue" required name="Venue">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="City" required name="City">
-            <input class="w3-input w3-section w3-border" type="text" placeholder="State" required name="State">
-            <p>Select an image file to represent your event</p>
-            <input class="w3-input w3-section w3-border" type="file" placeholder="Image" required name="Image">
-            <button class="w3-button w3-black w3-section" type="submit">
-                <i class="fa fa-paper-plane"></i> SUBMIT EVENT
-            </button>
-        </form>
+    <app-add-event></app-add-event>
     </div>
 
     <!-- Meet The Team -->
+    <div class="w3-container w3-padding-32" id="meet"></div>
     <app-meet-team></app-meet-team>
 
     <!-- Contact Section -->
+    <div class="w3-container w3-padding-32" id="contact"></div>
     <app-contact-info></app-contact-info>
 
     <!-- Footer -->
