@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IFavorite } from '../interfaces/favorites';
 import { IEvent } from '../interfaces/events';
+import { IContact } from '../interfaces/contacts';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,9 @@ export class RepositoryService {
 
   removeFavorite(favoriteEventId:IFavorite) {
     return this.http.post(`${this.apiUri}/RemoveFavoriteEventId/${favoriteEventId.favoriteEventId}`,{});
+  }
+
+  addContact(newContact:IContact) {
+    return this.http.post(`${this.apiUri}/AddContact`,newContact);
   }
 }

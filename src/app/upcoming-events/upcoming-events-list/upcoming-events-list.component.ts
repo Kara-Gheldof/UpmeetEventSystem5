@@ -15,7 +15,6 @@ export class UpcomingEventsListComponent {
 
   events: any;
   favorites: any;
-
   showDetails:boolean=false;
 
   ngOnInit(): void{
@@ -56,6 +55,7 @@ export class UpcomingEventsListComponent {
       }
     );
   }
+
   checkFavorite(incomingId: any): Boolean{
     if(this.favorites){
       for (let i = 0; i < this.favorites.length; i++){
