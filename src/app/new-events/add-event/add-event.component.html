@@ -2,9 +2,9 @@
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Add New Event</h3>
     <p>Please provide the following information for the new upcoming event:</p>
     <form #newEvent="ngForm" (ngSubmit)="addNewEvent(newEvent)">
-        <input class="w3-input w3-border" type="text" placeholder="Name of Event" name="nameOfEvent" id="nameOfEvent"
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Name of Event" name="nameOfEvent" id="nameOfEvent"
             ngModel>
-        <p>Event Start Date</p>
+        <p>Event Start Date </p>
         <input class="w3-input w3-section w3-border" type="date" placeholder="Start Date" name="startDate"
             id="startDate" ngModel>
         <p>Event End Date</p>

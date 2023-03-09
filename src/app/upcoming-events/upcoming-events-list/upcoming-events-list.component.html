@@ -1,9 +1,6 @@
 <!-- Event Section -->
 <div class="w3-container w3-padding-32">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Upcoming Events</h3>
-</div>
-
-<div class="w3-row-padding">
     <div onload="getFavorites()" *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
         <div *ngIf="checkFavorite(event.eventId)">
         <input (click)="removeFavorite(event.eventId)" id="star1" class="star" type="checkbox">
@@ -17,9 +14,9 @@
 
         <div class="w3-display-container">
             <div class="w3-display-topleft w3-black w3-padding">{{event.name}}</div>
-            <img src="{{event.image}}" style="width: 300px;" height="200px;">
+            <img src="{{event.image}}" style="width: 400px;" height="250px;">
             <br>
-            <p style="width: 300px;"><app-upcoming-events-details
+            <p style="width: 400px;"><app-upcoming-events-details
                     detailId={{event.eventId}}></app-upcoming-events-details></p>
         </div>
     </div>
@@ -33,9 +30,9 @@
         <div for="star1" align="center" style="width: 200px;">Remove Favorite</div>
         <div class="w3-display-container">
             <div class="w3-display-topleft w3-black w3-padding">{{fave.name}}</div>
-            <img src="{{fave.image}}" style="width: 300px;" height="200px;">
+            <img src="{{fave.image}}" style="width: 400px;" height="250px;">
             <br>
-            <p style="width: 300px;"><app-upcoming-events-details
+            <p style="width: 400px;"><app-upcoming-events-details
                     detailId={{fave.eventId}}></app-upcoming-events-details></p>
         </div>
     </div>
