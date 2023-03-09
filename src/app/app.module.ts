@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TeamInfoModule } from './team-info/team-info.module';
 import { ContactModule } from './contact/contact.module';
 import { FormsModule } from '@angular/forms';
+import { NewEventsModule } from './new-events/new-events.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     TeamInfoModule,
     ContactModule,
-    FormsModule
+    FormsModule,
+    NewEventsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

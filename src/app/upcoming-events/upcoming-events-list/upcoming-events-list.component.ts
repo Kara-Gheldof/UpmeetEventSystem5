@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IFavorite } from 'src/app/interfaces/favorites';
 import { RepositoryService } from '../event-repository.service';
 import { Router } from '@angular/router';
-import { IEvent } from 'src/app/interfaces/events';
+import { IFavorite } from '../../interfaces/favorites';
 
 @Component({
   selector: 'app-upcoming-events-list',
@@ -66,4 +65,5 @@ export class UpcomingEventsListComponent {
     }
     return false;
   }
+
 }
