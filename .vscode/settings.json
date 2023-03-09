@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/b8dedf70-8a35-4d6f-9090-78ece0a28a1e/resourceGroups/grand_circus/providers/Microsoft.Web/sites/UpmeetEventSystem-blb",
+    "appService.deploySubpath": "dist\\upmeet-event-system"
+}

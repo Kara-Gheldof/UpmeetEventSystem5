@@ -11,7 +11,7 @@ export class RepositoryService {
 
   constructor(private http: HttpClient) { }
 
-  apiUri: string = 'https://localhost:7011/api/Event'
+  apiUri: string = 'https://upmeeteventsystem20230308194148.azurewebsites.net/api/Event'
 
   getEvents() {
     return this.http.get<IEvent>(`${this.apiUri}/ViewEvents`)

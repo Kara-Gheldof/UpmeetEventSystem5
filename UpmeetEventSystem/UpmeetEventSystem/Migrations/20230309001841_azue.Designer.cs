@@ -12,8 +12,8 @@ using UpmeetEventSystem.DAL;
 namespace UpmeetEventSystem.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20230306173757_adding contact")]
-    partial class addingcontact
+    [Migration("20230309001841_azue")]
+    partial class azue
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

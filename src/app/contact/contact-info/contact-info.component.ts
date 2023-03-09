@@ -26,6 +26,9 @@ export class ContactInfoComponent {
   close(content:any) {
     this.modalService.dismissAll(content);
 	}
+  getName(form:NgForm){
+    form.form.value.name;
+  }
 
   sendContact(form:NgForm){
     let newContact: IContact = {
