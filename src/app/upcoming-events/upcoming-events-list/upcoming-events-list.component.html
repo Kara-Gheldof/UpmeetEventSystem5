@@ -1,7 +1,7 @@
 <!-- Event Section -->
 <div class="w3-container w3-padding-32">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Upcoming Events</h3>
-    <div onload="getFavorites()" *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
+    <div *ngFor="let event of events" class="w3-col l3 m6 w3-margin-bottom">
         <div *ngIf="checkFavorite(event.eventId)">
         <input (click)="removeFavorite(event.eventId)" id="star1" class="star" type="checkbox">
             <div for="star1" align="center" style="width: 200px;">Remove Favorite</div>
