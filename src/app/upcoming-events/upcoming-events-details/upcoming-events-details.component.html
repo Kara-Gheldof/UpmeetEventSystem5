@@ -9,10 +9,10 @@
             <div>
                 <br>
                 <p *ngIf="event!.startDate != event!.endDate">
-                    <strong>Event Dates</strong> {{ event!.startDate | date }} - {{ event!.endDate | date }}
+                    <strong>Event Dates:</strong> {{ event!.startDate | date }} - {{ event!.endDate | date }}
                 </p>
                 <p *ngIf="event!.startDate == event!.endDate">
-                    <strong>Event Date</strong> {{ event!.startDate | date }}
+                    <strong>Event Date:</strong> {{ event!.startDate | date }}
                 </p>
                 <p><strong>Venue:</strong> {{ event!.venue }}</p>
                 <p><strong>Location:</strong> {{ event!.city }}, {{ event!.state }}</p>
